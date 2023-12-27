@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Task2.Models.Store>
+@{
+    ViewData["Title"] = "New Requirement";
+}
+
+<h2>Order Page</h2>
+<p>Order Not Present in store need to wait</p>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

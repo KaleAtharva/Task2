@@ -1,0 +1,49 @@
+﻿@model Task2.Models.Store
+@{
+    ViewData["Title"] = "New Requirement";
+}
+
+<h4>Production Requirement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+            <div class="form-group">
+                <label asp-for="itemID" class="control-label"></label>
+                <input asp-for="itemID" class="form-control" />
+                <span asp-validation-for="itemID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="item" class="control-label"></label>
+                <input asp-for="item" id="item" class="form-control" />
+                <span asp-validation-for="item" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default">
+            </div>
+        </form>
+    </div>
+</div>
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+
+        document.getElementById("item").ariaValueText = ViewData["item"];
+    </script>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

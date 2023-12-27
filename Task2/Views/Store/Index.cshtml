@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Task2.Models.Store>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Storage</h2>
+<p>
+    <a asp-action="Create">Generate new Requirement</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.itemID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => item.itemID)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => item.item)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => item.available)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => item.quantity)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

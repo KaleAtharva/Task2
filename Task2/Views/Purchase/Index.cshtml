@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Task2.Models.Purchase>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>New Requirements</h2>
+<p>
+    <a asp-action="Create">Place Order</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.itemID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => item.itemID)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => item.item)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => item.quantity)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

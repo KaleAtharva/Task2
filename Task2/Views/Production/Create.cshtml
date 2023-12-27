@@ -1,0 +1,20 @@
+﻿@model Task2.Models.Store
+@{
+    ViewData["Title"] = "New Requirement";
+}
+
+<h4>Order Status</h4>
+<div id="text"></div>
+<hr />
+
+<script type="text/javascript">
+    function addCode() {
+        document.getElementsById("text").innerHTML += @ViewBag.Quantity;
+    }
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
